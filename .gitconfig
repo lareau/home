@@ -1,0 +1,13 @@
+[user]
+	name = Chris LaReau
+	email = lareau@gmail.com
+[rerere]
+	enabled = false
+[merge]
+	tool = xxdiff
+[diff "odf"]
+	binary = true
+	textconv = odt2txt
+[diff "ods"]
+	binary = true
+	textconv = odt2txt
