@@ -1,0 +1,17 @@
+#!/bin/sh
+
+sudo apt-get update
+
+sudo apt-get install \
+  build-essential \
+  cflow \
+  ethtool \
+  nmap \
+  pcaputils \
+  ssh \
+  tshark \
+  vim \
+  vim-doc \
+  wireshark \
+  zsh \
+
