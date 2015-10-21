@@ -1,14 +1,24 @@
 #!/bin/sh
 
+sudo sh -c "echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A040830F7FAC5991
+
 sudo apt-get update
 
 sudo apt-get -y install \
   build-essential \
   cflow \
+  cscope \
   dconf-tools \
   ethtool \
+  git-gui \
+  gitk \
+  google-chrome-stable \
+  meld \
+  mutt \
   nmap \
   pcaputils \
+  rss-glx \
   ssh \
   tshark \
   vim \
@@ -18,4 +28,16 @@ sudo apt-get -y install \
 
 sudo chsh -s /bin/zsh `id -un`
 
+gsettings list-recursively | sort > $HOME/.ORIG_gsettings
+
 gsettings set org.mate.peripherals-keyboard-xkb.kbd options "['caps\tcaps:ctrl_modifier']"
+gsettings set org.mate.accessibility-keyboard bouncekeys-delay 15
+gsettings set org.mate.accessibility-keyboard bouncekeys-enable true
+gsettings set org.gnome.desktop.a11y.keyboard bouncekeys-delay 15
+gsettings set org.gnome.desktop.a11y.keyboard bouncekeys-enable true
+
+exit 0
+
+MIGRATE_FROM=/mnt/old/home/lareau
+rsync -av $MIGRATE_FROM/.config/google-chrome $HOME/.config
+rsync -av $MIGRATE_FROM/.cache/google-chrome $HOME/.cache
