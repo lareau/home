@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # vcsh clone https://github.com/lareau/home.git home
+# vcsh run home git config user.email "lareau@gmail.com"
+# vcsh run home git config user.name "Chris LaReau"
 
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
