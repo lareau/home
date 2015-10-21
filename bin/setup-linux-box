@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# vcsh clone https://github.com/lareau/home.git home
+
+sudo update-alternatives --set editor /usr/bin/vim.basic
+
 sudo sh -c "echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A040830F7FAC5991
 
