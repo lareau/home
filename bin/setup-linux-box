@@ -30,6 +30,7 @@ sudo apt-get -y install \
   vim \
   vim-doc \
   wireshark \
+  xsel \
   zsh \
 
 sudo chsh -s /bin/zsh `id -un`
@@ -47,3 +48,8 @@ exit 0
 MIGRATE_FROM=/mnt/old/home/lareau
 rsync -av $MIGRATE_FROM/.config/google-chrome $HOME/.config
 rsync -av $MIGRATE_FROM/.cache/google-chrome $HOME/.cache
+
+# PostgreSQL
+sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main' > /etc/apt/sources.list.d/postgresql.list"
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-key update
