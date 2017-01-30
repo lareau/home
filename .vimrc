@@ -22,10 +22,12 @@ set nohlsearch
 " set t_Co=0
 
 set tabstop=8
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
-autocmd FileType make set noexpandtab shiftwidth=8
+autocmd FileType make set noexpandtab shiftwidth=8 sts=8
+" autocmd Filetype javascript setlocal sts=2 sw=2
+autocmd Filetype python setlocal sts=4 sw=4
 set matchpairs=(:),{:},[:],<:>
 
 " FROM: http://www.vim.org/tips/tip.php?tip_id=330
