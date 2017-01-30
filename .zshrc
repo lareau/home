@@ -11,6 +11,8 @@ SAVEHIST=100000
 HISTSIZE=125000
 HISTFILE=~/.zsh_history
 
+autoload -Uz compinit && compinit
+
 # cvs group editable
 umask 002
 
