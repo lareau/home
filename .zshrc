@@ -49,6 +49,10 @@ function addpath {
     fi
 }
 
+function vigitgrep {
+    vi $(git grep -l "$@")
+}
+
 addpath "/usr/local/bin"
 addpath "$HOME/bin"
 
