@@ -1,0 +1,11 @@
+#!/bin/sh
+HOMEGIT="git --work-tree=$HOME --git-dir=$HOME/.home.git"
+if [ "$1" = "bootstrap" ] ; then
+    cd $HOME
+    $HOMEGIT init
+    $HOMEGIT remote add origin "$2"
+    $HOMEGIT --set-upstream-to=origin/master master
+    $HOMEGIT pull origin master
+    exit 0
+fi
+exec git --work-tree=$HOME --git-dir=$HOME/.home.git "$@"
